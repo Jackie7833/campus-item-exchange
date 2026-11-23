@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="1040" viewBox="0 0 1440 1040">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 700 42px Arial, "Microsoft YaHei", sans-serif; fill: #14213d; }
+      .sub { font: 400 22px Arial, "Microsoft YaHei", sans-serif; fill: #526070; }
+      .lane-title { font: 700 24px Arial, "Microsoft YaHei", sans-serif; fill: #0f172a; }
+      .box { fill: #ffffff; stroke: #d8e0ea; stroke-width: 2; rx: 18; }
+      .box-strong { fill: #ecfdf7; stroke: #14b8a6; stroke-width: 3; rx: 18; }
+      .step { font: 700 22px Arial, "Microsoft YaHei", sans-serif; fill: #102a43; }
+      .body { font: 400 19px Arial, "Microsoft YaHei", sans-serif; fill: #435366; }
+      .hint { font: 400 17px Arial, "Microsoft YaHei", sans-serif; fill: #64748b; }
+      .pill { fill: #14b8a6; rx: 18; }
+      .pill-text { font: 700 18px Arial, "Microsoft YaHei", sans-serif; fill: #ffffff; }
+      .warn { fill: #fff7ed; stroke: #fb923c; stroke-width: 2; rx: 16; }
+      .warn-text { font: 700 20px Arial, "Microsoft YaHei", sans-serif; fill: #9a3412; }
+      .arrow { stroke: #14b8a6; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+      .thin { stroke: #cbd5e1; stroke-width: 2; }
+      .code { font: 700 18px Menlo, Consolas, monospace; fill: #0f766e; }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#14b8a6"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1440" height="1040"/>
+  <text class="title" x="72" y="74">腾讯云 / DNSPod 域名 + 微信云托管上线流程</text>
+  <text class="sub" x="72" y="115">目标：最少改动，把现有云托管 Flask 后端变成微信小程序正式版可用的 HTTPS 合法域名。</text>
+
+  <rect class="box" x="70" y="155" width="390" height="800"/>
+  <rect class="box" x="525" y="155" width="390" height="800"/>
+  <rect class="box" x="980" y="155" width="390" height="800"/>
+
+  <text class="lane-title" x="105" y="205">一、腾讯云 / DNSPod</text>
+  <text class="lane-title" x="560" y="205">二、微信云托管</text>
+  <text class="lane-title" x="1015" y="205">三、微信公众平台</text>
+
+  <rect class="box-strong" x="105" y="240" width="320" height="120"/>
+  <rect class="pill" x="125" y="260" width="70" height="34"/>
+  <text class="pill-text" x="145" y="283">1</text>
+  <text class="step" x="210" y="285">购买 .cn 域名</text>
+  <text class="body" x="125" y="320">入口：腾讯云控制台 → 域名注册</text>
+  <text class="hint" x="125" y="348">建议：买 1 年，不买溢价域名</text>
+
+  <rect class="box" x="105" y="400" width="320" height="120"/>
+  <rect class="pill" x="125" y="420" width="70" height="34"/>
+  <text class="pill-text" x="145" y="443">2</text>
+  <text class="step" x="210" y="445">域名实名认证</text>
+  <text class="body" x="125" y="480">入口：域名控制台 → 我的域名</text>
+  <text class="hint" x="125" y="508">个人备案用个人实名信息</text>
+
+  <rect class="box" x="105" y="560" width="320" height="140"/>
+  <rect class="pill" x="125" y="580" width="70" height="34"/>
+  <text class="pill-text" x="145" y="603">3</text>
+  <text class="step" x="210" y="605">提交 ICP 备案</text>
+  <text class="body" x="125" y="640">入口：腾讯云控制台 → 网站备案</text>
+  <text class="hint" x="125" y="668">服务内容写校园信息服务类描述</text>
+  <text class="hint" x="125" y="694">等待管局审核通过</text>
+
+  <rect class="box" x="105" y="740" width="320" height="120"/>
+  <rect class="pill" x="125" y="760" width="70" height="34"/>
+  <text class="pill-text" x="145" y="783">4</text>
+  <text class="step" x="210" y="785">添加 DNS 解析</text>
+  <text class="body" x="125" y="820">主机记录：api</text>
+  <text class="hint" x="125" y="848">解析目标按云托管绑定提示填写</text>
+
+  <rect class="box-strong" x="560" y="240" width="320" height="140"/>
+  <rect class="pill" x="580" y="260" width="70" height="34"/>
+  <text class="pill-text" x="600" y="283">5</text>
+  <text class="step" x="665" y="285">绑定自定义域名</text>
+  <text class="body" x="580" y="320">入口：云托管 → 服务详情</text>
+  <text class="hint" x="580" y="348">服务设置 / 网络 / 自定义域名</text>
+  <text class="code" x="580" y="374">api.你的域名.cn</text>
+
+  <rect class="box" x="560" y="420" width="320" height="120"/>
+  <rect class="pill" x="580" y="440" width="70" height="34"/>
+  <text class="pill-text" x="600" y="463">6</text>
+  <text class="step" x="665" y="465">配置 HTTPS 证书</text>
+  <text class="body" x="580" y="500">使用腾讯云免费 SSL 证书</text>
+  <text class="hint" x="580" y="528">绑定成功后确认 https 可访问</text>
+
+  <rect class="box" x="560" y="580" width="320" height="120"/>
+  <rect class="pill" x="580" y="600" width="70" height="34"/>
+  <text class="pill-text" x="600" y="623">7</text>
+  <text class="step" x="665" y="625">测试接口</text>
+  <text class="body" x="580" y="660">浏览器访问：</text>
+  <text class="code" x="580" y="688">/python7i67w282/config/list</text>
+
+  <rect class="box-strong" x="1015" y="240" width="320" height="150"/>
+  <rect class="pill" x="1035" y="260" width="70" height="34"/>
+  <text class="pill-text" x="1055" y="283">8</text>
+  <text class="step" x="1120" y="285">配置合法域名</text>
+  <text class="body" x="1035" y="320">入口：开发管理 → 开发设置</text>
+  <text class="hint" x="1035" y="348">request / uploadFile / downloadFile</text>
+  <text class="code" x="1035" y="376">https://api.你的域名.cn</text>
+
+  <rect class="box" x="1015" y="430" width="320" height="120"/>
+  <rect class="pill" x="1035" y="450" width="70" height="34"/>
+  <text class="pill-text" x="1055" y="473">9</text>
+  <text class="step" x="1120" y="475">修改小程序代码</text>
+  <text class="body" x="1035" y="510">接口基地址改成自定义域名</text>
+  <text class="hint" x="1035" y="538">重新上传体验版验证</text>
+
+  <rect class="box" x="1015" y="590" width="320" height="120"/>
+  <rect class="pill" x="1035" y="610" width="70" height="34"/>
+  <text class="pill-text" x="1055" y="633">10</text>
+  <text class="step" x="1120" y="635">提交审核发布</text>
+  <text class="body" x="1035" y="670">上传代码 → 提交审核</text>
+  <text class="hint" x="1035" y="698">审核通过后发布正式版</text>
+
+  <path class="arrow" d="M425 300 C475 300 505 300 555 300"/>
+  <path class="arrow" d="M880 310 C930 310 960 310 1010 310"/>
+  <path class="arrow" d="M265 360 L265 395"/>
+  <path class="arrow" d="M265 520 L265 555"/>
+  <path class="arrow" d="M265 700 L265 735"/>
+  <path class="arrow" d="M720 380 L720 415"/>
+  <path class="arrow" d="M720 540 L720 575"/>
+  <path class="arrow" d="M1175 390 L1175 425"/>
+  <path class="arrow" d="M1175 550 L1175 585"/>
+
+  <rect class="warn" x="525" y="760" width="390" height="145"/>
+  <text class="warn-text" x="555" y="800">注意</text>
+  <text class="body" x="555" y="835">云托管默认域名只能测试，不适合正式版。</text>
+  <text class="body" x="555" y="866">正式上线要使用你自己的 HTTPS 域名。</text>
+  <text class="body" x="555" y="897">建议固定使用：api.你的域名.cn</text>
+
+  <line class="thin" x1="72" y1="980" x2="1368" y2="980"/>
+  <text class="sub" x="72" y="1012">最轻量路径：不买云服务器，不改后端架构，只买域名并绑定到现有微信云托管服务。</text>
+</svg>

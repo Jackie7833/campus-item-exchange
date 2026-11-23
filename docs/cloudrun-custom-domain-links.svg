@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1420" height="920" viewBox="0 0 1420 920">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .title { font: 700 40px Arial, "Microsoft YaHei", sans-serif; fill: #14213d; }
+      .sub { font: 400 21px Arial, "Microsoft YaHei", sans-serif; fill: #64748b; }
+      .card { fill: #ffffff; stroke: #d8e0ea; stroke-width: 2; rx: 18; }
+      .head { font: 700 26px Arial, "Microsoft YaHei", sans-serif; fill: #0f172a; }
+      .body { font: 400 21px Arial, "Microsoft YaHei", sans-serif; fill: #334155; }
+      .small { font: 400 18px Arial, "Microsoft YaHei", sans-serif; fill: #64748b; }
+      .code { font: 700 20px Menlo, Consolas, monospace; fill: #0f766e; }
+      .pill { fill: #14b8a6; rx: 18; }
+      .pill-text { font: 700 18px Arial, "Microsoft YaHei", sans-serif; fill: #ffffff; }
+      .btn { fill: #0f5bdd; rx: 12; }
+      .btn-text { font: 700 21px Arial, "Microsoft YaHei", sans-serif; fill: #ffffff; }
+      .warn { fill: #fff7ed; stroke: #fb923c; stroke-width: 2; rx: 16; }
+      .warn-title { font: 700 22px Arial, "Microsoft YaHei", sans-serif; fill: #9a3412; }
+      .arrow { stroke: #14b8a6; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+      .screen { fill: #f8fafc; stroke: #cbd5e1; stroke-width: 2; rx: 12; }
+      .nav { fill: #ffffff; stroke: #e2e8f0; stroke-width: 1; }
+      .tab { fill: #e0f2fe; rx: 8; }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#14b8a6"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1420" height="920"/>
+  <text class="title" x="70" y="70">api.bjutcampus.cn 绑定到微信云托管：入口示意图</text>
+  <text class="sub" x="70" y="112">目标：把云托管服务 flask-2u3u 绑定到自定义域名，然后去 DNSPod 添加解析。</text>
+
+  <rect class="card" x="70" y="155" width="390" height="640"/>
+  <rect class="pill" x="105" y="190" width="70" height="34"/>
+  <text class="pill-text" x="126" y="213">1</text>
+  <text class="head" x="195" y="215">进入微信云托管</text>
+  <rect class="screen" x="105" y="250" width="320" height="250"/>
+  <rect class="nav" x="105" y="250" width="320" height="44"/>
+  <text class="small" x="125" y="279">CloudBase 控制台</text>
+  <rect class="tab" x="130" y="325" width="250" height="44"/>
+  <text class="body" x="150" y="354">云托管</text>
+  <rect class="tab" x="130" y="385" width="250" height="44"/>
+  <text class="body" x="150" y="414">服务列表</text>
+  <rect class="btn" x="130" y="445" width="250" height="38"/>
+  <text class="btn-text" x="178" y="471">flask-2u3u</text>
+  <text class="body" x="105" y="550">路径提示：</text>
+  <text class="small" x="105" y="586">云开发 CloudBase 控制台</text>
+  <text class="small" x="105" y="620">→ 环境 prod-d2glavkbz3c97ef18</text>
+  <text class="small" x="105" y="654">→ 云托管 → 服务 flask-2u3u</text>
+
+  <rect class="card" x="515" y="155" width="390" height="640"/>
+  <rect class="pill" x="550" y="190" width="70" height="34"/>
+  <text class="pill-text" x="571" y="213">2</text>
+  <text class="head" x="640" y="215">添加自定义域名</text>
+  <rect class="screen" x="550" y="250" width="320" height="250"/>
+  <rect class="nav" x="550" y="250" width="320" height="44"/>
+  <text class="small" x="570" y="279">服务详情</text>
+  <rect class="tab" x="575" y="325" width="250" height="44"/>
+  <text class="body" x="595" y="354">服务设置 / 网络</text>
+  <rect class="tab" x="575" y="385" width="250" height="44"/>
+  <text class="body" x="595" y="414">自定义域名</text>
+  <rect class="btn" x="575" y="445" width="250" height="38"/>
+  <text class="btn-text" x="650" y="471">添加域名</text>
+  <text class="body" x="550" y="550">填写域名：</text>
+  <text class="code" x="550" y="586">api.bjutcampus.cn</text>
+  <text class="small" x="550" y="622">页面会给你 CNAME 解析目标，复制下来。</text>
+
+  <rect class="card" x="960" y="155" width="390" height="640"/>
+  <rect class="pill" x="995" y="190" width="70" height="34"/>
+  <text class="pill-text" x="1016" y="213">3</text>
+  <text class="head" x="1085" y="215">去 DNSPod 加解析</text>
+  <rect class="screen" x="995" y="250" width="320" height="250"/>
+  <rect class="nav" x="995" y="250" width="320" height="44"/>
+  <text class="small" x="1015" y="279">DNSPod 解析</text>
+  <rect class="tab" x="1020" y="325" width="250" height="44"/>
+  <text class="body" x="1040" y="354">bjutcampus.cn</text>
+  <rect class="tab" x="1020" y="385" width="250" height="44"/>
+  <text class="body" x="1040" y="414">添加记录</text>
+  <rect class="btn" x="1020" y="445" width="250" height="38"/>
+  <text class="btn-text" x="1085" y="471">保存解析</text>
+  <text class="body" x="995" y="550">解析填写：</text>
+  <text class="code" x="995" y="586">主机记录：api</text>
+  <text class="code" x="995" y="620">记录类型：CNAME</text>
+  <text class="code" x="995" y="654">记录值：云托管给你的地址</text>
+
+  <path class="arrow" d="M460 475 C485 475 490 475 515 475"/>
+  <path class="arrow" d="M905 475 C930 475 935 475 960 475"/>
+
+  <rect class="warn" x="180" y="825" width="1060" height="64"/>
+  <text class="warn-title" x="210" y="865">如果页面提示“未备案/不可绑定”，说明不能跳过备案；如果生成了 CNAME，就继续按第 3 步配置。</text>
+</svg>

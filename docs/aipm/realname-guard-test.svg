@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="860" viewBox="0 0 1280 860">
+  <defs>
+    <style>
+      .bg { fill: #f6f8fb; }
+      .phone { fill: #ffffff; stroke: #d8e0ea; stroke-width: 3; rx: 36; }
+      .screen { fill: #f9fafa; rx: 28; }
+      .nav { fill: #ffffff; }
+      .title { font: 700 34px Arial, "Microsoft YaHei", sans-serif; fill: #14213d; }
+      .sub { font: 400 20px Arial, "Microsoft YaHei", sans-serif; fill: #64748b; }
+      .text { font: 400 22px Arial, "Microsoft YaHei", sans-serif; fill: #334155; }
+      .bold { font: 700 24px Arial, "Microsoft YaHei", sans-serif; fill: #0f172a; }
+      .small { font: 400 18px Arial, "Microsoft YaHei", sans-serif; fill: #64748b; }
+      .card { fill: #ffffff; stroke: #e2e8f0; stroke-width: 2; rx: 16; }
+      .image { fill: #dbeafe; rx: 12; }
+      .primary { fill: #14b8a6; rx: 12; }
+      .secondary { fill: #e0f2fe; rx: 12; }
+      .btn-text { font: 700 20px Arial, "Microsoft YaHei", sans-serif; fill: #ffffff; }
+      .modal-mask { fill: rgba(15, 23, 42, 0.45); }
+      .modal { fill: #ffffff; rx: 18; }
+      .modal-title { font: 700 28px Arial, "Microsoft YaHei", sans-serif; fill: #0f172a; }
+      .modal-body { font: 400 22px Arial, "Microsoft YaHei", sans-serif; fill: #475569; }
+      .cancel { fill: #f1f5f9; rx: 10; }
+      .confirm { fill: #14b8a6; rx: 10; }
+      .callout { fill: #ecfdf5; stroke: #14b8a6; stroke-width: 2; rx: 16; }
+      .callout-title { font: 700 22px Arial, "Microsoft YaHei", sans-serif; fill: #0f766e; }
+      .callout-text { font: 400 18px Arial, "Microsoft YaHei", sans-serif; fill: #334155; }
+      .arrow { stroke: #14b8a6; stroke-width: 4; fill: none; marker-end: url(#arrowhead); }
+    </style>
+    <marker id="arrowhead" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto">
+      <path d="M2,2 L10,6 L2,10 Z" fill="#14b8a6"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" width="1280" height="860"/>
+  <text class="title" x="72" y="70">未实名认证操作拦截测试示意图</text>
+  <text class="sub" x="72" y="108">测试账号：未认证用户登录后，点击购买、认领、发布、收藏、评论、联系TA等按钮。</text>
+
+  <rect class="phone" x="92" y="145" width="410" height="650"/>
+  <rect class="screen" x="116" y="180" width="362" height="580"/>
+  <rect class="nav" x="116" y="180" width="362" height="62"/>
+  <text class="bold" x="250" y="220">二手详情</text>
+
+  <rect class="card" x="140" y="266" width="314" height="330"/>
+  <rect class="image" x="164" y="290" width="266" height="150"/>
+  <text class="bold" x="164" y="480">护眼学习台灯</text>
+  <text class="text" x="164" y="516">数量：1  在售</text>
+  <text class="small" x="164" y="552">描述清晰，支持校内自取。</text>
+
+  <rect class="secondary" x="140" y="620" width="92" height="54"/>
+  <text class="text" x="164" y="654">收藏</text>
+  <rect class="primary" x="246" y="620" width="92" height="54"/>
+  <text class="btn-text" x="272" y="654">购买</text>
+  <rect class="primary" x="352" y="620" width="92" height="54"/>
+  <text class="btn-text" x="372" y="654">联系TA</text>
+
+  <rect class="modal-mask" x="116" y="180" width="362" height="580"/>
+  <rect class="modal" x="148" y="358" width="298" height="236"/>
+  <text class="modal-title" x="190" y="410">未完成实名认证</text>
+  <text class="modal-body" x="178" y="456">完成学生证实名认证后，</text>
+  <text class="modal-body" x="178" y="490">才可以进行发布、购买、</text>
+  <text class="modal-body" x="178" y="524">认领和互动操作。</text>
+  <rect class="cancel" x="176" y="548" width="112" height="42"/>
+  <text class="text" x="214" y="577">取消</text>
+  <rect class="confirm" x="306" y="548" width="112" height="42"/>
+  <text class="btn-text" x="336" y="577">去认证</text>
+
+  <rect class="callout" x="590" y="190" width="570" height="120"/>
+  <text class="callout-title" x="625" y="235">验收点 1：未认证用户被拦截</text>
+  <text class="callout-text" x="625" y="270">点击购买、认领、发布、收藏、评论、点赞、点踩、联系TA，都显示同一弹窗。</text>
+
+  <rect class="callout" x="590" y="360" width="570" height="120"/>
+  <text class="callout-title" x="625" y="405">验收点 2：点击“去认证”</text>
+  <text class="callout-text" x="625" y="440">跳转到个人资料页，用户可以上传学生证并触发 OCR 实名认证。</text>
+
+  <rect class="callout" x="590" y="530" width="570" height="120"/>
+  <text class="callout-title" x="625" y="575">验收点 3：已认证用户放行</text>
+  <text class="callout-text" x="625" y="610">当 `sfsh == '是'` 时，按钮保持原有流程，不出现实名认证拦截弹窗。</text>
+
+  <path class="arrow" d="M444 645 C520 610 545 445 588 420"/>
+  <path class="arrow" d="M418 568 C520 540 540 435 588 420"/>
+</svg>

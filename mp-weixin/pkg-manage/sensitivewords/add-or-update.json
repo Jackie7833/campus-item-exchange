@@ -1,0 +1,9 @@
+{
+  "navigationBarBackgroundColor": "#FFFFFF",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "w-picker": "/pkg-manage/components/w-picker/w-picker",
+    "xia-editor": "/pkg-manage/components/xia-editor/xia-editor",
+    "multiple-select": "/components/momo-multipleSelect/momo-multipleSelect"
+  }
+}

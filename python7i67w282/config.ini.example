@@ -1,0 +1,14 @@
+[sql]
+type = mysql
+host = localhost
+port = 3306
+user = root
+passwd =
+db = python7i67w282
+hasHadoop = 否
+charset = utf8mb4
+
+[redis]
+host = 127.0.0.1
+port = 6379
+passwd =

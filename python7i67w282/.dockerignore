@@ -1,0 +1,8 @@
+.venv
+.venv39
+.local
+__pycache__
+*.pyc
+.idea
+demo_outputs
+api/bin

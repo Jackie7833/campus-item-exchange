@@ -1,0 +1,138 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/ai-assistant/ai-assistant",
+    "pages/login/login",
+    "pages/register/register",
+    "pages/forget/forget",
+    "pages/center/center",
+    "pages/shiwuzhaoling/list",
+    "pages/ershouliuzhuan/list",
+    "pages/news/list"
+  ],
+  "subPackages": [
+    {
+      "root": "pkg-content",
+      "pages": [
+        "news-detail/news-detail",
+        "news/add-or-update",
+        "discussshiwuzhaoling/list",
+        "discussshiwuzhaoling/add-or-update",
+        "discussshiwuzhaoling/detail",
+        "discussershouliuzhuan/list",
+        "discussershouliuzhuan/add-or-update",
+        "discussershouliuzhuan/detail",
+        "discussnews/list",
+        "discussnews/add-or-update",
+        "discussnews/detail",
+        "linkOthers/linkOthers"
+      ]
+    },
+    {
+      "root": "pkg-trade",
+      "pages": [
+        "ershouliuzhuan/add-or-update",
+        "ershouliuzhuan/detail",
+        "goumaidingdan/list",
+        "goumaidingdan/add-or-update",
+        "goumaidingdan/detail",
+        "pay-confirm/pay-confirm"
+      ]
+    },
+    {
+      "root": "pkg-lost",
+      "pages": [
+        "shiwuzhaoling/add-or-update",
+        "shiwuzhaoling/detail",
+        "renlingshenqing/list",
+        "renlingshenqing/add-or-update",
+        "renlingshenqing/detail"
+      ]
+    },
+    {
+      "root": "pkg-user",
+      "pages": [
+        "yonghu/list",
+        "yonghu/add-or-update",
+        "yonghu/detail",
+        "storeup/list",
+        "storeup/add-or-update",
+        "storeup/detail",
+        "user-info/user-info"
+      ]
+    },
+    {
+      "root": "pkg-manage",
+      "pages": [
+        "shangpinleixing/list",
+        "shangpinleixing/add-or-update",
+        "shangpinleixing/detail",
+        "newstype/list",
+        "newstype/add-or-update",
+        "newstype/detail",
+        "sensitivewords/list",
+        "sensitivewords/add-or-update",
+        "sensitivewords/detail"
+      ]
+    }
+  ],
+  "window": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "北京工业大学校园物品流转平台",
+    "navigationBarBackgroundColor": "#FFFFFF",
+    "backgroundColor": "#F6F8FA",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "color": "#667085",
+    "selectedColor": "#12A99D",
+    "borderStyle": "white",
+    "backgroundColor": "#FFFFFF",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "static/tabs/index.png",
+        "selectedIconPath": "static/tabs/index1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/shiwuzhaoling/list",
+        "iconPath": "/static/tabs/icon1.png",
+        "selectedIconPath": "/static/tabs/icon1_act.png",
+        "text": "失物招领"
+      },
+      {
+        "pagePath": "pages/ershouliuzhuan/list",
+        "iconPath": "/static/tabs/icon2.png",
+        "selectedIconPath": "/static/tabs/icon2_act.png",
+        "text": "二手流转"
+      },
+      {
+        "pagePath": "pages/news/list",
+        "iconPath": "static/tabs/news.png",
+        "selectedIconPath": "static/tabs/news_act.png",
+        "text": "校园动态"
+      },
+      {
+        "pagePath": "pages/center/center",
+        "iconPath": "static/tabs/mine.png",
+        "selectedIconPath": "static/tabs/mine1.png",
+        "text": "个人中心"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取地址"
+    }
+  },
+  "requiredPrivateInfos": [
+    "chooseLocation",
+    "getLocation"
+  ],
+  "usingComponents": {
+    "uni-load-more": "/components/mescroll-uni/mescroll-uni",
+    "mescroll-uni": "/components/mescroll-uni/mescroll-uni",
+    "uni-popup": "/components/uni-popup/uni-popup"
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "description": "项目配置文件。",
+  "packOptions": {
+    "ignore": [
+      {
+        "type": "file",
+        "value": ".gitignore"
+      },
+      {
+        "type": "file",
+        "value": "project.private.config.json"
+      },
+      {
+        "type": "folder",
+        "value": "static/js"
+      },
+      {
+        "type": "folder",
+        "value": "static/weather"
+      },
+      {
+        "type": "folder",
+        "value": "static/share"
+      },
+      {
+        "type": "folder",
+        "value": "static/coupon"
+      },
+      {
+        "type": "folder",
+        "value": "static/exam-index"
+      },
+      {
+        "type": "folder",
+        "value": "static/restaurant-detail"
+      },
+      {
+        "type": "folder",
+        "value": "static/center"
+      }
+    ],
+    "include": []
+  },
+  "setting": {
+    "urlCheck": false,
+    "es6": false,
+    "postcss": false,
+    "minified": true,
+    "newFeature": true,
+    "bigPackageSizeSupport": true,
+    "babelSetting": {
+      "ignore": [],
+      "disablePlugins": [],
+      "outputPath": ""
+    },
+    "enhance": true,
+    "compileWorklet": false,
+    "uglifyFileName": false,
+    "uploadWithSourceMap": false,
+    "packNpmManually": false,
+    "packNpmRelationList": [],
+    "minifyWXSS": true,
+    "minifyWXML": true,
+    "localPlugins": false,
+    "disableUseStrict": false,
+    "useCompilerPlugins": false,
+    "condition": false,
+    "swc": false,
+    "disableSWC": true
+  },
+  "compileType": "miniprogram",
+  "libVersion": "latest",
+  "appid": "wx172f1d984521a9f9",
+  "projectname": "app02",
+  "condition": {},
+  "editorSetting": {
+    "tabIndent": "insertSpaces",
+    "tabSize": 2
+  },
+  "simulatorPluginLibVersion": {}
+}

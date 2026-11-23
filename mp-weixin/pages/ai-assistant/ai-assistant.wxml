@@ -1,0 +1,50 @@
+<view class="page">
+  <view class="hero">
+    <view class="hero-title">AI校园物品流转助手</view>
+    <view class="hero-subtitle">集中测试智能搜索、失物匹配和内容审核。</view>
+  </view>
+
+  <view class="tabs">
+    <view class="tab {{mode == 'search' ? 'active' : ''}}" data-mode="search" bindtap="switchMode">智能搜索</view>
+    <view class="tab {{mode == 'match' ? 'active' : ''}}" data-mode="match" bindtap="switchMode">失物匹配</view>
+    <view class="tab {{mode == 'moderate' ? 'active' : ''}}" data-mode="moderate" bindtap="switchMode">内容审核</view>
+  </view>
+
+  <view class="panel">
+    <textarea class="input" value="{{query}}" placeholder="{{placeholder}}" bindinput="onInput"></textarea>
+    <button class="primary" loading="{{loading}}" disabled="{{loading}}" bindtap="runAiTask">{{buttonText}}</button>
+  </view>
+
+  <view class="result" wx:if="{{hasResult}}">
+    <view class="result-title">AI 结果</view>
+
+    <block wx:if="{{mode == 'search'}}">
+      <view class="empty" wx:if="{{results.length == 0}}">暂未找到相关内容，可换一种描述。</view>
+      <view class="item" wx:for="{{results}}" wx:key="id" data-type="{{item.type}}" data-id="{{item.id}}" bindtap="goDetail">
+        <view class="item-title">{{item.title}}</view>
+        <view class="item-meta">{{item.type}} · 匹配分 {{item.score}}</view>
+        <view class="item-reason">{{item.reason}}</view>
+      </view>
+    </block>
+
+    <block wx:if="{{mode == 'match'}}">
+      <view class="empty" wx:if="{{results.length == 0}}">暂无疑似匹配的认领申请。</view>
+      <view class="item" wx:for="{{results}}" wx:key="claimId">
+        <view class="item-title">{{item.itemName}}</view>
+        <view class="item-meta">失物 #{{item.lostId}} · 认领 #{{item.claimId}} · {{item.score}}分</view>
+        <view class="item-reason">{{item.reason}}</view>
+        <view class="item-reason">核验：{{item.verifyText}}</view>
+      </view>
+    </block>
+
+    <block wx:if="{{mode == 'moderate'}}">
+      <view class="item">
+        <view class="item-title">风险等级：{{moderation.riskLevel}}</view>
+        <view class="item-meta">处理建议：{{moderation.action}}</view>
+        <view class="item-reason">{{moderation.summary}}</view>
+        <view class="item-reason">命中：{{moderation.hitText}}</view>
+        <view class="item-reason">边界：{{moderation.guardrailText}}</view>
+      </view>
+    </block>
+  </view>
+</view>

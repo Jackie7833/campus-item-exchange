@@ -1,0 +1,164 @@
+<view class="content data-v-2fc1a426">
+  <view class="center-page data-v-2fc1a426">
+    <block wx:if="{{user&&user.id}}">
+      <view data-event-opts="{{[['tap',[['onPageTap',['/pkg-user/user-info/user-info']]]]]}}" class="{{['header','data-v-2fc1a426',(isH5Plus)?'status':'']}}" bindtap="__e">
+        <block wx:if="{{tableName=='yonghu'}}">
+          <view class="userinfo data-v-2fc1a426">
+            <image class="avatar-img data-v-2fc1a426" src="{{user.touxiang?baseUrl+user.touxiang:$root.m0}}"></image>
+            <view class="info profile-info data-v-2fc1a426">
+              <view class="name-row data-v-2fc1a426">
+                <text class="name-text data-v-2fc1a426">{{user.zhanghao}}<block wx:if="{{user.vip&&user.vip=='是'}}"><text class="data-v-2fc1a426">(VIP)</text></block></text>
+                <block wx:if="{{tableName=='yonghu'&&user.sfsh=='是'}}">
+                  <image class="verified-badge data-v-2fc1a426" mode="aspectFit" src="{{avator}}"></image>
+                </block>
+              </view>
+            </view>
+            <view class="info contact-info data-v-2fc1a426">
+              <view class="contact-card data-v-2fc1a426">
+                <text class="contact-label data-v-2fc1a426">手机：</text>
+                <text class="contact-value data-v-2fc1a426">{{user.shouji}}</text>
+              </view>
+            </view>
+          </view>
+        </block>
+        <view class="setting data-v-2fc1a426">
+          <text class="icon iconfont icon-qita6 setting-icon data-v-2fc1a426"></text>
+          <text class="setting-text data-v-2fc1a426">设置</text>
+        </view>
+      </view>
+    </block>
+    <block wx:else>
+      <view data-event-opts="{{[['tap',[['loginClick',['$event']]]]]}}" class="{{['header','data-v-2fc1a426',(isH5Plus)?'status':'']}}" bindtap="__e">
+        <view class="login-entry data-v-2fc1a426">登录/注册</view>
+      </view>
+    </block>
+    <view class="list data-v-2fc1a426">
+      <view class="service-section data-v-2fc1a426">
+        <view class="service-title-wrap data-v-2fc1a426">
+          <view class="service-title data-v-2fc1a426">我的校园事务</view>
+        </view>
+        <view class="mine-grid data-v-2fc1a426">
+          <view class="mine-card data-v-2fc1a426" data-event-opts="{{[['tap',[['openMineList',['lost']]]]]}}" bindtap="__e">
+            <view class="mine-card-head data-v-2fc1a426">
+              <view class="data-v-2fc1a426">
+                <view class="mine-card-title data-v-2fc1a426">我的失物发布</view>
+                <view class="mine-card-count data-v-2fc1a426">{{profileStats.lost}} 条</view>
+              </view>
+              <text class="icon iconfont icon-jinru mine-card-arrow data-v-2fc1a426"></text>
+            </view>
+            <block wx:if="{{myLostList.length}}">
+              <view class="mine-card-record data-v-2fc1a426" data-event-opts="{{[['tap',[['openRecordDetail',['lost']]]]]}}" catchtap="__e">
+                <view class="record-name data-v-2fc1a426">{{myLostList[0].wupinmingcheng||myLostList[0].biaoti}}</view>
+                <view class="record-meta data-v-2fc1a426">
+                  <text class="status-tag data-v-2fc1a426">{{myLostList[0].centerStatus}}</text>
+                  <text class="data-v-2fc1a426">{{myLostList[0].centerDate}}</text>
+                </view>
+              </view>
+            </block>
+            <block wx:else><view class="mine-card-empty data-v-2fc1a426">暂未发布</view></block>
+          </view>
+          <view class="mine-card data-v-2fc1a426" data-event-opts="{{[['tap',[['openMineList',['secondhand']]]]]}}" bindtap="__e">
+            <view class="mine-card-head data-v-2fc1a426">
+              <view class="data-v-2fc1a426">
+                <view class="mine-card-title data-v-2fc1a426">我的二手发布</view>
+                <view class="mine-card-count data-v-2fc1a426">{{profileStats.secondhand}} 条</view>
+              </view>
+              <text class="icon iconfont icon-jinru mine-card-arrow data-v-2fc1a426"></text>
+            </view>
+            <block wx:if="{{mySecondhandList.length}}">
+              <view class="mine-card-record data-v-2fc1a426" data-event-opts="{{[['tap',[['openRecordDetail',['secondhand']]]]]}}" catchtap="__e">
+                <view class="record-name data-v-2fc1a426">{{mySecondhandList[0].shangpinmingcheng}}</view>
+                <view class="record-meta data-v-2fc1a426">
+                  <text class="{{['status-tag','data-v-2fc1a426',mySecondhandList[0].centerTag]}}">{{mySecondhandList[0].centerStatus}}</text>
+                  <text class="data-v-2fc1a426">数量 {{mySecondhandList[0].shuliang||0}}</text>
+                </view>
+              </view>
+            </block>
+            <block wx:else><view class="mine-card-empty data-v-2fc1a426">暂未发布</view></block>
+          </view>
+          <view class="mine-card data-v-2fc1a426" data-event-opts="{{[['tap',[['openMineList',['claims']]]]]}}" bindtap="__e">
+            <view class="mine-card-head data-v-2fc1a426">
+              <view class="data-v-2fc1a426">
+                <view class="mine-card-title data-v-2fc1a426">我的认领申请</view>
+                <view class="mine-card-count data-v-2fc1a426">{{profileStats.claims}} 条</view>
+              </view>
+              <text class="icon iconfont icon-jinru mine-card-arrow data-v-2fc1a426"></text>
+            </view>
+            <block wx:if="{{myClaimList.length}}">
+              <view class="mine-card-record data-v-2fc1a426" data-event-opts="{{[['tap',[['openRecordDetail',['claims']]]]]}}" catchtap="__e">
+                <view class="record-name data-v-2fc1a426">{{myClaimList[0].wupinmingcheng||myClaimList[0].biaoti}}</view>
+                <view class="record-meta data-v-2fc1a426">
+                  <text class="{{['status-tag','data-v-2fc1a426',myClaimList[0].centerTag]}}">{{myClaimList[0].centerStatus}}</text>
+                  <text class="data-v-2fc1a426">{{myClaimList[0].shhf||'等待审核'}}</text>
+                </view>
+              </view>
+            </block>
+            <block wx:else><view class="mine-card-empty data-v-2fc1a426">暂无记录</view></block>
+          </view>
+          <view class="mine-card data-v-2fc1a426" data-event-opts="{{[['tap',[['openMineList',['orders']]]]]}}" bindtap="__e">
+            <view class="mine-card-head data-v-2fc1a426">
+              <view class="data-v-2fc1a426">
+                <view class="mine-card-title data-v-2fc1a426">我的购买订单</view>
+                <view class="mine-card-count data-v-2fc1a426">{{profileStats.orders}} 条</view>
+              </view>
+              <text class="icon iconfont icon-jinru mine-card-arrow data-v-2fc1a426"></text>
+            </view>
+            <block wx:if="{{myOrderList.length}}">
+              <view class="mine-card-record data-v-2fc1a426" data-event-opts="{{[['tap',[['openRecordDetail',['orders']]]]]}}" catchtap="__e">
+                <view class="record-name data-v-2fc1a426">{{myOrderList[0].shangpinmingcheng}}</view>
+                <view class="record-meta data-v-2fc1a426">
+                  <text class="{{['status-tag','data-v-2fc1a426',myOrderList[0].centerTag]}}">{{myOrderList[0].centerStatus}}</text>
+                  <text class="data-v-2fc1a426">￥{{myOrderList[0].jine||0}} · {{myOrderList[0].shuliang||0}} 件</text>
+                </view>
+              </view>
+            </block>
+            <block wx:else><view class="mine-card-empty data-v-2fc1a426">暂无记录</view></block>
+          </view>
+          <view class="mine-card data-v-2fc1a426" data-event-opts="{{[['tap',[['openMineList',['favorites']]]]]}}" bindtap="__e">
+            <view class="mine-card-head data-v-2fc1a426">
+              <view class="data-v-2fc1a426">
+                <view class="mine-card-title data-v-2fc1a426">我的收藏</view>
+                <view class="mine-card-count data-v-2fc1a426">{{profileStats.favorites}} 条</view>
+              </view>
+              <text class="icon iconfont icon-jinru mine-card-arrow data-v-2fc1a426"></text>
+            </view>
+            <block wx:if="{{myFavoriteList.length}}">
+              <view class="mine-card-record data-v-2fc1a426" data-event-opts="{{[['tap',[['openRecordDetail',['favorites']]]]]}}" catchtap="__e">
+                <view class="record-name data-v-2fc1a426">{{myFavoriteList[0].name}}</view>
+                <view class="record-meta data-v-2fc1a426">
+                  <text class="status-tag data-v-2fc1a426">{{myFavoriteList[0].centerStatus}}</text>
+                  <text class="data-v-2fc1a426">{{myFavoriteList[0].centerDate}}</text>
+                </view>
+              </view>
+            </block>
+            <block wx:else><view class="mine-card-empty data-v-2fc1a426">暂无收藏</view></block>
+          </view>
+        </view>
+        <block wx:if="{{user&&user.id}}">
+          <view class="account-action data-v-2fc1a426" hover-class="hover" data-event-opts="{{[['tap',[['passwordShow']]]]}}" bindtap="__e">
+            <view class="cuIcon-lock account-action-icon data-v-2fc1a426"></view>
+            <view class="account-action-text data-v-2fc1a426">修改密码</view>
+            <view class="icon iconfont icon-jinru data-v-2fc1a426"></view>
+          </view>
+        </block>
+      </view>
+    </view>
+    <view class="bottom-spacer data-v-2fc1a426"></view>
+  </view>
+  <uni-popup class="popup-content data-v-2fc1a426 vue-ref" vue-id="6f193cc0-1" type="bottom" data-ref="passwordPopup" bind:__l="__l" vue-slots="{{['default']}}">
+    <view class="passwordForm data-v-2fc1a426">
+      <view class="passwordInput data-v-2fc1a426">
+        <input type="password" placeholder="原密码" data-event-opts="{{[['input',[['__set_model',['$0','mima','$event',[]],['passwordForm']]]]]}}" value="{{passwordForm.mima}}" bindinput="__e" class="data-v-2fc1a426"/>
+      </view>
+      <view class="passwordInput data-v-2fc1a426">
+        <input type="password" placeholder="新密码" data-event-opts="{{[['input',[['__set_model',['$0','newmima','$event',[]],['passwordForm']]]]]}}" value="{{passwordForm.newmima}}" bindinput="__e" class="data-v-2fc1a426"/>
+      </view>
+      <view class="passwordInput data-v-2fc1a426">
+        <input type="password" placeholder="确认密码" data-event-opts="{{[['input',[['__set_model',['$0','newmima1','$event',[]],['passwordForm']]]]]}}" value="{{passwordForm.newmima1}}" bindinput="__e" class="data-v-2fc1a426"/>
+      </view>
+      <view class="passwordBtnView data-v-2fc1a426">
+        <button data-event-opts="{{[['tap',[['updatePassword',['$event']]]]]}}" class="passwordBtn data-v-2fc1a426" bindtap="__e">更新</button>
+      </view>
+    </view>
+  </uni-popup>
+</view>
